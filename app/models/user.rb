@@ -3,9 +3,16 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 5, allow_nil: true }
   validates :username, uniqueness: true
 
+  has_many :boards
+  has_many :card_assignments
+  has_many :board_memberships, inverse_of: :user
+
   attr_reader :password
   after_initialize :ensure_session_token
-  
+
+  def gravatar_url
+    "http://www.gravatar.com/avatar/#{ Digest::MD5.hexdigest(email) }"
+  end
 
   def self.find_by_credentials(user_params)
     user = User.find_by_username(user_params[:username])
