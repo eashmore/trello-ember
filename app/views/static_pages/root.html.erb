@@ -1,6 +1,4 @@
-<%= include_ember_index_html :frontend %>
-
-<%= csrf_meta_tags %>
-
 <script>window.CURRENT_USER = "<%= current_user.username %>"</script>
 <script>window.CURRENT_USER_ID = <%= current_user.id %></script>
+
+<%= include_ember_index_html :frontend %>

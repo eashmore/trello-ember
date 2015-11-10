@@ -1,5 +1,8 @@
 TrelloClone::Application.routes.draw do
-  root to: 'static_pages#root'
+  root to: "static_pages#root"
+  match "/boards/:all" => "static_pages#root", via: [:get, :post]
+  match "/lists/:all" => "static_pages#root", via: [:get, :post]
+  match "/cards/:all" => "static_pages#root", via: [:get, :post]
 
   resources :users
   resources :sessions

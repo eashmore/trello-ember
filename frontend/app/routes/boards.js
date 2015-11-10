@@ -7,12 +7,14 @@ export default Ember.Route.extend({
 
   actions: {
     createBoard(boardTitle) {
-      Ember.Logger.log('create')
-
       this.store.createRecord('board', {
         title: boardTitle,
         user_id: window.CURRENT_USER_ID
       }).save();
+    },
+
+    toShow(id) {
+      this.transitionTo('/boards/' + id);
     }
   }
 });

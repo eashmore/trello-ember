@@ -1,5 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  tagName: 'li'
+  tagName: 'li',
+
+  actions: {
+    showBoard(board) {
+      this.sendAction('action', board.get('id'));
+    }
+  }
 });

@@ -1,15 +1,1 @@
-<button
-  id="new-board"
-  class="dropdown-toggle navbar-btn btn btn-primary"
-  data-toggle="dropdown" {{action "showInput" inputName="board-input"}}>
-  <span class="glyphicon glyphicon-plus"></span>
-   New Board
-</button>
-{{#if inputIsShown}}
-  {{render 'components/board-input'}}
-{{/if}}
-
-
-{{#board-list}}
-  {{outlet}}
-{{/board-list}}
+{{outlet}}

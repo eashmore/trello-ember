@@ -1,3 +1,15 @@
-{{#each model as |board|}}
-  {{board-item board=board}}
-{{/each}}
+<button
+  id="new-board" class="dropdown-toggle navbar-btn btn btn-primary"
+  data-toggle="dropdown" {{action "showInput" inputName="board-input"}}
+>
+  <span class="glyphicon glyphicon-plus"></span>
+   New Board
+</button>
+
+{{board-input action="createBoard"}}
+
+{{#board-list}}
+  {{#each model as |board|}}
+    {{board-item board=board action="toShow"}}
+  {{/each}}
+{{/board-list}}
