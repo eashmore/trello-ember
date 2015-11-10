@@ -7,8 +7,8 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('boards', { path: '/' }, function() {
-    this.route('show', { path: '/boards/:board_id'}, function() {
-      this.route('lists');
+    this.route('show', { path: '/boards/:board_id' }, function() {
+      this.route('lists', { path: '/lists', resetNamespace: true }, function() {});
     });
   });
 });

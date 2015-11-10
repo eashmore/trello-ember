@@ -1,2 +1,4 @@
-class Api::CardAssignmentsController < ApplicationController
+module Api
+  class CardAssignmentsController < ApplicationController
+  end
 end

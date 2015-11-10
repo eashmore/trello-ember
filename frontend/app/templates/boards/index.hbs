@@ -1,15 +1,13 @@
-<button
-  id="new-board" class="dropdown-toggle navbar-btn btn btn-primary"
-  data-toggle="dropdown" {{action "showInput" inputName="board-input"}}
->
-  <span class="glyphicon glyphicon-plus"></span>
-   New Board
-</button>
+<h2 id="title">Welcome to Not Trello!!!</h2>
+<p>
+  This site acts like, but is in fact not, Trello
+</p>
 
-{{board-input action="createBoard"}}
+{{new-obj-button}}
+{{obj-input action="createBoard"}}
 
 {{#obj-list}}
   {{#each model as |board|}}
-    {{obj-item obj=board action="toShow"}}
+    <li>{{obj-item obj=board action="toShow"}}</li>
   {{/each}}
 {{/obj-list}}
