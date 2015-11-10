@@ -1,8 +1,5 @@
 TrelloClone::Application.routes.draw do
   root to: "static_pages#root"
-  match "/boards/:all" => "static_pages#root", via: [:get, :post]
-  match "/lists/:all" => "static_pages#root", via: [:get, :post]
-  match "/cards/:all" => "static_pages#root", via: [:get, :post]
 
   resources :users
   resources :sessions
@@ -16,4 +13,8 @@ TrelloClone::Application.routes.draw do
     # resources :board_memberships
     # resources :card_assignments
   end
+
+  match "/boards/:all" => "static_pages#root", via: [:get, :post]
+  match "/lists/:all" => "static_pages#root", via: [:get, :post]
+  match "/cards/:all" => "static_pages#root", via: [:get, :post]
 end

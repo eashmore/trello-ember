@@ -8,8 +8,8 @@
 
 {{board-input action="createBoard"}}
 
-{{#board-list}}
+{{#obj-list}}
   {{#each model as |board|}}
-    {{board-item board=board action="toShow"}}
+    {{obj-item obj=board action="toShow"}}
   {{/each}}
-{{/board-list}}
+{{/obj-list}}
