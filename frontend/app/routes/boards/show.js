@@ -6,6 +6,9 @@ export default Ember.Route.extend({
   },
 
   renderTemplate(controller, model) {
+    model.get('lists').then(function(lists) {
+      Ember.Logger.log(lists);
+    });
     this.render("boards/show", {
       outlet: "main"
     });

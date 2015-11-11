@@ -5,10 +5,10 @@ export default Ember.Controller.extend({
     createList(listTitle) {
       this.store.createRecord('list', {
         title: listTitle,
-        board_id: 1,
+        boardId: 1,
         ord: 0
       }).save();
-      Ember.Logger.log('here');
+      // Ember.Logger.log('here');
     }
   }
 });
