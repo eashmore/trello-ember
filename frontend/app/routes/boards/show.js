@@ -5,10 +5,7 @@ export default Ember.Route.extend({
     return this.store.findRecord('board', params.board_id);
   },
 
-  renderTemplate(controller, model) {
-    model.get('lists').then(function(lists) {
-      Ember.Logger.log(lists);
-    });
+  renderTemplate(c, model) {
     this.render("boards/show", {
       outlet: "main"
     });

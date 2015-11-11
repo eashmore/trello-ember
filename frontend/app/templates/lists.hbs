@@ -3,9 +3,7 @@
 {{obj-input action="createList"}}
 
 {{#obj-list}}
-
-{{obj-item obj=model}}
   {{#each model.lists as |list|}}
-    {{obj-item obj=list}}
+    <li>{{obj-item obj=list}}</li>
   {{/each}}
 {{/obj-list}}
