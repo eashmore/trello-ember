@@ -2,13 +2,16 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
-    createList(listTitle) {
-      this.store.createRecord('list', {
+    createList(listTitle, pKey) {
+      var newList = this.store.createRecord('list', {
         title: listTitle,
-        boardId: 1,
+        board_id: pKey,
         ord: 0
-      }).save();
-      // Ember.Logger.log('here');
+      });
+      newList.save();
+
+      this.store.findRecord('board', newList.get('boardId'))
+        .get('lists').pushObject(newList);
     }
   }
 });

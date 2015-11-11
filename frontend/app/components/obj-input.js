@@ -2,9 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   actions: {
-    submitObj(objTitle){
+    submitObj(objTitle, pKey){
       if (objTitle) {
-        this.sendAction("action", objTitle);
+        this.sendAction("action", objTitle, pKey);
       }
 
       this.set("objTitle", "");

@@ -1,4 +1,4 @@
-ActiveModel::Serializer.config.adapter = :json_api
+# ActiveModel::Serializer.config.adapter = :json
 
 class BoardSerializer < ActiveModel::Serializer
   attributes :id, :title, :user_id
